@@ -1,0 +1,53 @@
+---
+title: "Justin Campbell - Final Project"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) # from "new R Markdown template
+library(tidyverse) # I think it will be good to try the tidyverse libraries
+library(readxl) # for reading excel
+```
+
+```{r}
+df <- read_excel("Blacksheepgastronomy Sales data 2019-YTD.xlsm")
+``` 
+
+```{r}
+
+summary(df)
+Final_Project_Draft_Master_Copy_with_all_btl_sizes <- df
+```
+## What
+My brother, a chef for now 20+ years, started Black Sheep Gastronomy (BSG) in 2018. The company was based on his creative recipe for Worcestershire sauce. While BSG does offer several products outside of "the sauce" this data is digging into Feb 2019 - April 2022. More specifically I wanted to look at which bottle size is most likely to be purchased when customers are presented with the four different sizes.
+
+## Why
+Using some of the data modeling methods we have learned will hopefully shed some insight onto how my brother can better anticipate future sales at the farmers markets. 
+
+## How
+The csv file was extracted from his Shopify account. I then had to do some data cleansing as there were a few trial sales entries within each column from when he started the business.
+
+```{r}
+hist(df$gross_sales)
+```
+
+# Topic #1
+Identifying what highest frequency of purchases will help understand buyer behavior to a degree. Within the histogram above, I've identified the clear majority of individual sales transactions are less than $50. One question I have been looking at is; if I can model different cities/states side by side then maybe I can narrow down customer spending ranges by city/state? The goal of this would be to make more educated decisions as to where sales efforts have a higher ROI.
+
+```{r}
+#plot(Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Sale Month`, Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Gross Sales`)
+```
+
+# Topic #2
+The 16oz bottle makes up 46% of total bottles sold across all four sizes. Modeling the sales across all four sizes against the respective sales city/state is What I would like to create.
+
+```{r}
+#hist(Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Quantity ordered`, Final_Project_Draft_Master_Copy_with_all_btl_sizes$Product)
+```
+
+Topic #3
+Knowing that 46% of all bottles sold have been the 16 oz size. If I am working at the farmers market I am wondering within how many people that approach our booth will it take in order to sell that first 16oz bottle.
+
+

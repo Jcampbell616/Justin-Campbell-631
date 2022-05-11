@@ -1,0 +1,70 @@
+---
+title: "For Justin"
+author: "Abe Kazemzadeh"
+date: "5/3/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) # from "new R Markdown template
+library(tidyverse) # I think it will be good to try the tidyverse libraries
+library(readxl) # for reading excel
+```
+
+```{r}
+df <- read_excel("Blacksheepgastronomy Sales data 2019-YTD.xlsm")
+```
+
+
+## average sales by billing_region
+
+unique billing regions
+
+```{r}
+unique(df$billing_region)
+```
+
+counts of transactions in each region
+
+```{r}
+table(df$billing_region)
+```
+
+table of billing regions with greater than 20 transactions
+```{r}
+tab <- table(df$billing_region)
+barplot(subset(tab, tab > 20))
+```
+
+some tidy functionality [see r4ds](https://r4ds.had.co.nz/)
+
+get the mean, sd, and count of sales in each region.
+
+```{r}
+df %>%
+  filter(units_per_transaction != 0) %>%
+  group_by(billing_region) %>%
+  filter(n()>10) %>%
+  summarize(mean_sales=mean(total_sales), sd_sales=sd(total_sales), n=n())
+```
+a knitr table
+```{r}
+library(knitr)
+df %>%
+  filter(units_per_transaction != 0) %>%
+  group_by(billing_region) %>%
+  filter(n()>10) %>%
+  summarize(mean_sales=mean(total_sales), sd_sales=sd(total_sales), n=n()) %>%
+  kable()
+
+```
+
+
+# statistic tests
+
+anova
+
+```{r}
+anova(aov(total_sales ~ billing_region, data=df))
+```
+

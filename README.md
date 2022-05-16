@@ -54,7 +54,7 @@ cities/states side by side then maybe I can narrow down customer
 spending ranges by city/state? The goal of this would be to make more
 educated decisions as to where sales efforts have a higher ROI.
 
-    #plot('df'$`Sale Month`, 'df'$`Gross Sales`)
+    #plot(df$`Sale Month`, 'df'$`Gross Sales`)
 
 # Topic #2
 
@@ -62,7 +62,7 @@ The 16oz bottle makes up 46% of total bottles sold across all four
 sizes. Modeling the sales across all four sizes against the respective
 sales city/state is What I would like to create.
 
-    #hist(Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Quantity ordered`, Final_Project_Draft_Master_Copy_with_all_btl_sizes$Product)
+    #hist(df$`Quantity ordered`, df$Product)
 
 Topic #3 Knowing that 46% of all bottles sold have been the 16 oz size.
 If I am working at the farmers market I am wondering within how many

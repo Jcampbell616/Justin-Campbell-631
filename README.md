@@ -54,7 +54,7 @@ cities/states side by side then maybe I can narrow down customer
 spending ranges by city/state? The goal of this would be to make more
 educated decisions as to where sales efforts have a higher ROI.
 
-    #plot(Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Sale Month`, Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Gross Sales`)
+    #plot('df'$`Sale Month`, 'df'$`Gross Sales`)
 
 # Topic #2
 

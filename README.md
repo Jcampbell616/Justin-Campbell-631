@@ -68,3 +68,7 @@ Topic #3 Knowing that 46% of all bottles sold have been the 16 oz size.
 If I am working at the farmers market I am wondering within how many
 people that approach our booth will it take in order to sell that first
 16oz bottle.
+
+# Conclusion
+
+Reviewing all data points within Rstudio as well as excel functions I've found that within orders that are $50 or less, at least 1 of the bottle sizes purchased will be 16 oz. Other factors that could have an impact on my findings that I would like to continue exploring would be shipping cost and how that could influence a buyers initial purchase and/or continued ordering habits.

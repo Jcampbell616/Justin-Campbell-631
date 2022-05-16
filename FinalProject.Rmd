@@ -37,14 +37,14 @@ hist(df$gross_sales)
 Identifying what highest frequency of purchases will help understand buyer behavior to a degree. Within the histogram above, I've identified the clear majority of individual sales transactions are less than $50. One question I have been looking at is; if I can model different cities/states side by side then maybe I can narrow down customer spending ranges by city/state? The goal of this would be to make more educated decisions as to where sales efforts have a higher ROI.
 
 ```{r}
-#plot(Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Sale Month`, Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Gross Sales`)
+#plot(df$`Sale Month`, df$`Gross Sales`)
 ```
 
 # Topic #2
 The 16oz bottle makes up 46% of total bottles sold across all four sizes. Modeling the sales across all four sizes against the respective sales city/state is What I would like to create.
 
 ```{r}
-#hist(Final_Project_Draft_Master_Copy_with_all_btl_sizes$`Quantity ordered`, Final_Project_Draft_Master_Copy_with_all_btl_sizes$Product)
+#hist(df$`Quantity ordered`, df$Product)
 ```
 
 Topic #3
